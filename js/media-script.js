@@ -1,6 +1,5 @@
 (function(){
 	"use strict";
-	console.log('media');
 	var target;
 
 	var $ = window.jQuery;
@@ -35,15 +34,14 @@
   		nextArrow: '.akMedia__button--next'
 	});
 
-	/*$('.ak-media-archive__list').slick({
+	$('.ak-media-archive__list').slick({
 	  	slidesToShow: $('.akMedia-archive__item').length,
-	  	slidesToScroll: 1,
+	  	slidesToScroll: 0,
 	  	initialSlide: startslide,
 	  	asNavFor: '.akMedia',
-	  	focusOnSelect: true,
 	  	vertical: true,
 	  	arrows: false
-	});*/
+	});
 
 	//update url on change (both links & arrows)
 	$('.akMedia').on('afterChange', function(event, slick, currentSlide){   

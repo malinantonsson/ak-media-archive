@@ -7,7 +7,7 @@ Description: Used to dislay media with archive (e.g we love). Shortcode for post
 // Enqueue styles and scripts
 add_action( 'wp_enqueue_scripts', 'add_mediaArchive_script' );
 function add_mediaArchive_script() { 
-	wp_enqueue_script( 'ak-onePage-script', plugins_url('ak-media-with-archive/js/media-script.js'), array ( 'jquery' ), 1.1, true); 
+	wp_enqueue_script( 'ak-mediaArchive-script', plugins_url('ak-media-with-archive/js/media-script.js'), array ( 'jquery' ), 1.1, true); 
 }
 
 
@@ -30,25 +30,20 @@ function akMediaArchive_sc($atts) {
     $output = '';
 
     $output .= 	'
-    	<h4 class="ak-media-archive__headline">'.$headline.'</h4> 
-    	<nav class="ak-media-archive">
-	    	<div class="ak-media-archive__list">';
+    	<h4 class="ak-archive__headline ak-media-archive__headline">'.$headline.'</h4> 
+    	<nav class="ak-archive ak-media-archive">
+	    	<div class="ak-archive__list ak-media-archive__list">';
 
 	    	$index = 1;
 	    	foreach($custom_posts as $post) : setup_postdata($post);
 		    	$slug = basename(get_permalink());
 		    	$link = get_the_permalink();
-		    	$title = get_the_title();
-		    	$date = get_the_date('jS F Y');
 		    	$thumbnail = get_the_post_thumbnail();
 
 		    	$output .= 	
-		    		'<a class="ak-media-archive__item" slide="slide_'.$index.'" href="'.$link.'" 
+		    		'<a class="ak-media-archive__item ak-archive__item" slide="slide_'.$index.'" href="'.$link.'" 
 		    		data-link="'.$slug.'">
-		    			<span>Image: </span> '.$thumbnail.'
-		    			<span class="ak-media-archive__title">'.$title.'</span>
-
-		    			<span class="ak-media-archive__date">'.$date.'</span>
+		    			'.$thumbnail.'
 		    		</a>'; 
 				 $index++;
 			endforeach; wp_reset_postdata();

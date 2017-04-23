@@ -79,21 +79,21 @@ function akMedia_sc($atts) {
 
 	$index = 0;
     $output .= 	'
-    	<div class="akMedia-wrapper">
-	    	<div class="akMedia">'; 
+    	<div class="ak-post-wrapper akMedia-wrapper">
+	    	<div class="ak-posts akMedia">'; 
 		    
 		    foreach($custom_posts as $post) : setup_postdata($post);
 		    	$slug = basename(get_permalink());
 		    	$title = get_the_title();
 		    	$content = ak_media_the_content();
 		    	$output .= 	'
-		    	<div class="akMedia-post" id="'.$slug.'"
+		    	<div class="ak-post akMedia-post" id="'.$slug.'"
 		    		data-index="'.$index.'" 
 		    		data-behaviour="akMedia-post">
-			        <h3 class="akMedia-post__headline">
+			        <h3 class="ak-post__headline akMedia-post__headline">
 			        	'.$title.'</h3>
 			        
-			        <div class="akMedia-post__content">'
+			        <div class="ak-post__content akMedia-post__content">'
 			        	.$content.
 			        '</div>
 			    </div>';

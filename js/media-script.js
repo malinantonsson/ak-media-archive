@@ -46,7 +46,7 @@
 
 	//update url on change (both links & arrows)
 	$('.akMedia').on('afterChange', function(event, slick, currentSlide){   
-		var target = $('[data-slick-index=' + currentSlide + ']')[1].id;
+		var target = $('.akMedia [data-slick-index=' + currentSlide + ']')[0].id;
 		  if(history.replaceState) {
 		    history.replaceState(null, null, '#' + target);
 		}

@@ -18,7 +18,7 @@
 
 	//disable links
 	$('.ak-media-archive__item').on('click', function(evt) {
-	  evt.preventDefault();
+	  	evt.preventDefault();
 	}); 
 
 
@@ -36,9 +36,10 @@
 
 	$('.ak-media-archive__list').slick({
 	  	slidesToShow: $('.akMedia-archive__item').length,
-	  	slidesToScroll: 0,
+	  	slidesToScroll: 1,
 	  	initialSlide: startslide,
 	  	asNavFor: '.akMedia',
+	  	focusOnSelect: true,
 	  	vertical: true,
 	  	arrows: false
 	});
@@ -110,6 +111,6 @@
       	}
 	}
 
-	socialShare()
+	socialShare();
 
 })();

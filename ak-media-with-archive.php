@@ -41,7 +41,7 @@ function akMediaArchive_sc($atts) {
 		    	$thumbnail = get_the_post_thumbnail();
 
 		    	$output .= 	
-		    		'<a class="ak-media-archive__item ak-archive__item" slide="slide_'.$index.'" href="'.$link.'" 
+		    		'<a class="ak-archive__item ak-media-archive__item" slide="slide_'.$index.'" href="'.$link.'" 
 		    		data-link="'.$slug.'">
 		    			'.$thumbnail.'
 		    		</a>'; 
